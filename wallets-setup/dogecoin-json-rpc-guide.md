@@ -2,6 +2,12 @@
 
 This guide will show the basics on how to get your account setup and create a dogecoin address so that we can send funds to your account.
 
+## Pre-Requisites
+
+Before you can continue you must have dogecoin running and fully synced, the guide to do that can be found below:
+
+- [Dogecoin Full Node Setup on ARM](https://github.com/ruanbekker/blockchain-testnet-weekend-project/blob/main/nodes-setup/dogecoin-testnet-arm.md)
+
 ## Ensure Dogecoin is Running
 
 Ensure that the dogecoin daemon is running, either using systemd:
