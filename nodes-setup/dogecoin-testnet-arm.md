@@ -172,3 +172,9 @@ You can use the json-rpc as well:
 ```bash
 curl -s -u "user:pass" -d '{"jsonrpc": "1.0", "id": "curl", "method": "getblockchaininfo", "params": []}' -H 'content-type: text/plain;' http://127.0.0.1:44555/  | python3 -m json.tool
 ```
+
+## Wallets Setup
+
+You can follow this guide to setup your wallet and send testnet funds to your address:
+
+- [Dogecoin JSON RPC Guide](https://github.com/ruanbekker/blockchain-testnet-weekend-project/blob/main/wallets-setup/dogecoin-json-rpc-guide.md)
