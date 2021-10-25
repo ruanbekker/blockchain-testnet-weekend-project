@@ -58,7 +58,7 @@ sudo ln -s /usr/local/dogecoin/1.14.4 /usr/local/dogecoin/current
 
 ## Configuration
 
-Create the configuration for bitcoin in `/home/crypto/.dogecoin/dogecoin.conf` with the following content:
+Create the configuration for dogecoin in `/home/crypto/.dogecoin/dogecoin.conf` with the following content:
 
 ```
 datadir=/blockchain/dogecoin/data
@@ -121,7 +121,7 @@ ExecStart=/usr/local/dogecoin/current/bin/dogecoind -conf=/home/crypto/.dogecoin
 WantedBy=multi-user.target
 ```
 
-Update the `PATH` variable to include bitcoin binaries in `/etc/profile.d/dogecoind.sh` with the following content:
+Update the `PATH` variable to include dogecoin binaries in `/etc/profile.d/dogecoind.sh` with the following content:
 
 ```bash
 export PATH=$PATH:/usr/local/dogecoin/current/bin
@@ -163,7 +163,7 @@ sudo journalctl -fu dogecoind
 A fully sync node should look like this:
 
 ```bash
-# sudo journalctl -fu bitcoind
+# sudo journalctl -fu dogecoind
 Oct 05 14:29:58 rpi-03 dogecoind[532]: 2021-10-05T14:29:58Z UpdateTip: new best=000000000000003b06a186bbd79909e1a338196b5cffcee1979d6c4fc90f67a9 height=2097621 version=0x20a00000 log2_work=74.510314 tx=61253790 date='2021-10-05T14:29:54Z' progress=1.000000 cache=0.4MiB(1477txo)
 ```
 
