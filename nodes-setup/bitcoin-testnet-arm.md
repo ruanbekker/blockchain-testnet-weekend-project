@@ -74,6 +74,10 @@ walletnotify=/blockchain/bitcoin/scripts/notify.sh %s %w
 [test]
 rpcbind=127.0.0.1
 rpcport=18332
+zmqpubrawblock=tcp://127.0.0.1:28332
+zmqpubrawtx=tcp://127.0.0.1:28333
+zmqpubhashblock=tcp://127.0.0.1:28332
+zmqpubhashtx=tcp://127.0.0.1:28333
 # uncomment after the wallet has been created
 # wallet=main
 ```
