@@ -70,7 +70,7 @@ rpcpassword=pass
 rpcclienttimeout=300
 testnet=1
 prune=2000
-walletnotify=/blockchain/bitcoin/scripts/notify.sh %s %w
+walletnotify=/blockchain/bitcoin/scripts/walletnotify.sh %s %w
 [test]
 rpcbind=127.0.0.1
 rpcport=18332
@@ -82,7 +82,7 @@ zmqpubhashtx=tcp://127.0.0.1:28333
 # wallet=main
 ```
 
-Create the wallet notify script in `/blockchain/bitcoin/scripts/notify.sh` with the content of:
+Create the wallet notify script in `/blockchain/bitcoin/scripts/walletnotify.sh` with the content of:
 
 ```bash
 #!/usr/bin/env bash
