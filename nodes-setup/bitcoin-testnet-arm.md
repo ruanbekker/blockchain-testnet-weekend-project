@@ -71,6 +71,7 @@ rpcclienttimeout=300
 testnet=1
 prune=2000
 walletnotify=/blockchain/bitcoin/scripts/walletnotify.sh %s %w
+blocknotify=/blockchain/bitcoin/scripts/blocknotify.sh %s
 [test]
 rpcbind=127.0.0.1
 rpcport=18332
@@ -86,10 +87,17 @@ Create the wallet notify script in `/blockchain/bitcoin/scripts/walletnotify.sh`
 
 ```bash
 #!/usr/bin/env bash
-echo "[$(date +%FT%T)] $1 $2" >> /var/log/wallet-notify.log
+echo "[$(date +%FT%T)] type:walletnotify $1 $2" >> /var/log/wallet-notify.log
 ```
 
-Create the file where the wallet notify data will be written to:
+Create the block notify script in `/blockchain/bitcoin/scripts/blocknotify.sh` with the content of:
+
+```bash
+#!/usr/bin/env bash
+echo "[$(date +%FT%T)] type:blocknotify $1" >> /var/log/wallet-notify.log
+```
+
+Create the file where the wallet and block notify data will be written to:
 
 ```bash
 sudo touch /var/log/wallet-notify.log
@@ -101,10 +109,10 @@ Change the permissions of the file so that the crypto user can write to it:
 sudo chown crypto:crypto /var/log/wallet-notify.log
 ```
 
-Make the script executable:
+Make the scripts executable:
 
 ```bash
-sudo chmod +x /blockchain/bitcoin/scripts/notify.sh
+sudo chmod +x /blockchain/bitcoin/scripts/*notify.sh
 ```
 
 Create the systemd unit file in `/etc/systemd/system/bitcoind.service`:
